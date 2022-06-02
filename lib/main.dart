@@ -48,7 +48,7 @@ class _MyAppState extends State<MyApp> {
       ..listen((user) => initialUser ?? setState(() => initialUser = user));
     Future.delayed(
       Duration(seconds: 1),
-          () => setState(() => displaySplashImage = false),
+      () => setState(() => displaySplashImage = false),
     );
   }
 
@@ -61,8 +61,8 @@ class _MyAppState extends State<MyApp> {
 
   void setLocale(Locale value) => setState(() => _locale = value);
   void setThemeMode(ThemeMode mode) => setState(() {
-    _themeMode = mode;
-  });
+        _themeMode = mode;
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -81,18 +81,18 @@ class _MyAppState extends State<MyApp> {
       themeMode: _themeMode,
       home: initialUser == null || displaySplashImage
           ? Center(
-        child: SizedBox(
-          width: 50,
-          height: 50,
-          child: SpinKitCubeGrid(
-            color: FlutterFlowTheme.of(context).primaryColor,
-            size: 50,
-          ),
-        ),
-      )
+              child: SizedBox(
+                width: 50,
+                height: 50,
+                child: SpinKitCubeGrid(
+                  color: FlutterFlowTheme.of(context).primaryColor,
+                  size: 50,
+                ),
+              ),
+            )
           : currentUser.loggedIn
-          ? NavBarPage()
-          : MainWidget(),
+              ? NavBarPage()
+              : MainWidget(),
     );
   }
 }
@@ -153,9 +153,7 @@ class _NavBarPageState extends State<NavBarPage> {
                   color: currentIndex == 0
                       ? FlutterFlowTheme.of(context).secondaryColor
                       : Color.fromRGBO(203, 203, 203, 1),
-                  size:currentIndex == 0
-                      ?35
-                      : 30,
+                  size: currentIndex == 0 ? 35 : 30,
                 ),
                 Text(
                   '•',
@@ -178,9 +176,7 @@ class _NavBarPageState extends State<NavBarPage> {
                   color: currentIndex == 1
                       ? FlutterFlowTheme.of(context).secondaryColor
                       : FlutterFlowTheme.of(context).tertiaryColor,
-                  size:currentIndex == 1
-                      ?35
-                      : 30,
+                  size: currentIndex == 1 ? 35 : 30,
                 ),
                 Text(
                   '•',
@@ -206,9 +202,7 @@ class _NavBarPageState extends State<NavBarPage> {
                   color: currentIndex == 2
                       ? FlutterFlowTheme.of(context).secondaryColor
                       : FlutterFlowTheme.of(context).tertiaryColor,
-                  size:currentIndex == 2
-                      ?35
-                      : 30,
+                  size: currentIndex == 2 ? 35 : 30,
                 ),
                 Text(
                   '•',
@@ -228,4 +222,3 @@ class _NavBarPageState extends State<NavBarPage> {
     );
   }
 }
-

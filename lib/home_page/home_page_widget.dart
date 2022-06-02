@@ -8,11 +8,13 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../choisirUnParking/ChoisirUnParking.dart';
+import '../map.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({Key key}) : super(key: key);
 
@@ -43,7 +45,6 @@ class _HomePageWidgetState extends State<HomePageWidget>
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
-
   void initState() {
     super.initState();
     startPageLoadAnimations(
@@ -90,7 +91,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       offset: Offset(0, 1),
                     )
                   ],
-                  color:FlutterFlowTheme.of(context).secondaryColor ,
+                  color: FlutterFlowTheme.of(context).secondaryColor,
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(50),
                     bottomRight: Radius.circular(50),
@@ -146,22 +147,26 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             children: [
                               Text(
                                 'Bienvenue',
-                                style: FlutterFlowTheme.of(context).title2
+                                style: FlutterFlowTheme.of(context)
+                                    .title2
                                     .override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: FlutterFlowTheme.of(context).primaryColor,
-                                ),
+                                      fontFamily: 'Lexend Deca',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryColor,
+                                    ),
                               ),
                               Text(
                                 valueOrDefault<String>(
                                   profilePageUsersRecord.displayName,
                                   'Randy Morrison',
                                 ),
-                                style: FlutterFlowTheme.of(context).title3
+                                style: FlutterFlowTheme.of(context)
+                                    .title3
                                     .override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: FlutterFlowTheme.of(context).customColor1,
-                                ),
+                                      fontFamily: 'Lexend Deca',
+                                      color: FlutterFlowTheme.of(context)
+                                          .customColor1,
+                                    ),
                               ),
                             ],
                           ),
@@ -186,7 +191,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(30, 30,0, 20),
+                padding: EdgeInsetsDirectional.fromSTEB(30, 30, 0, 20),
                 child: Container(
                   height: 250,
                   width: 440,
@@ -196,83 +201,72 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       fit: BoxFit.cover,
                     ),
                   ),
-
-                  child:Column(
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-
-
                     children: [
                       SizedBox(height: 25),
                       Text(
                         'Une meilleure ',
-                        style: FlutterFlowTheme.of(context).title1
-                            .override(
-                          fontFamily: 'Lexend Deca',
-                          color:FlutterFlowTheme.of(context).primaryColor,
-                        ),
+                        style: FlutterFlowTheme.of(context).title1.override(
+                              fontFamily: 'Lexend Deca',
+                              color: FlutterFlowTheme.of(context).primaryColor,
+                            ),
                       ),
                       Text(
                         'expérience   ',
-                        style: FlutterFlowTheme.of(context).title1
-                            .override(
-                          fontFamily: 'Lexend Deca',
-                          color: FlutterFlowTheme.of(context).primaryColor,
-                        ),
+                        style: FlutterFlowTheme.of(context).title1.override(
+                              fontFamily: 'Lexend Deca',
+                              color: FlutterFlowTheme.of(context).primaryColor,
+                            ),
                       ),
                       Text(
                         'dans votre  ',
-                        style: FlutterFlowTheme.of(context).title1
-                            .override(
-                          fontFamily: 'Lexend Deca',
-                          color: FlutterFlowTheme.of(context).primaryColor,
-                        ),
+                        style: FlutterFlowTheme.of(context).title1.override(
+                              fontFamily: 'Lexend Deca',
+                              color: FlutterFlowTheme.of(context).primaryColor,
+                            ),
                       ),
                       Text(
                         'stationnement ',
-                        style: FlutterFlowTheme.of(context).title1
-                            .override(
-                          fontFamily: 'Lexend Deca',
-                          color: FlutterFlowTheme.of(context).primaryColor,
-                        ),
+                        style: FlutterFlowTheme.of(context).title1.override(
+                              fontFamily: 'Lexend Deca',
+                              color: FlutterFlowTheme.of(context).primaryColor,
+                            ),
                       ),
                       Container(
                         height: 8,
                       ),
                       Text(
                         'Trouver une place libre dans',
-                        style: FlutterFlowTheme.of(context).bodyText2
-                            .override(
-                          fontFamily: 'Lexend Deca',
-                          color: FlutterFlowTheme.of(context).gray600,
-                        ),
+                        style: FlutterFlowTheme.of(context).bodyText2.override(
+                              fontFamily: 'Lexend Deca',
+                              color: FlutterFlowTheme.of(context).gray600,
+                            ),
                       ),
                       Text(
                         'les parkings les plus proches',
-                        style: FlutterFlowTheme.of(context).bodyText2
-                            .override(
-                          fontFamily: 'Lexend Deca',
-                          color: FlutterFlowTheme.of(context).gray600,
-                        ),
+                        style: FlutterFlowTheme.of(context).bodyText2.override(
+                              fontFamily: 'Lexend Deca',
+                              color: FlutterFlowTheme.of(context).gray600,
+                            ),
                       ),
                     ],
                   ),
-                ),),
+                ),
+              ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
-                child:Column(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
-
-
-
                   children: [
                     Text(
                       'Sélectionner un véhicule',
-                      style: FlutterFlowTheme.of(context).title2
-                          .override(
-                        fontFamily: 'Lexend Deca',
-                        color: FlutterFlowTheme.of(context).primaryColor,
-                      ),),
+                      style: FlutterFlowTheme.of(context).title2.override(
+                            fontFamily: 'Lexend Deca',
+                            color: FlutterFlowTheme.of(context).primaryColor,
+                          ),
+                    ),
                     SizedBox(height: 30),
                     Row(
                       mainAxisSize: MainAxisSize.max,
@@ -286,27 +280,33 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               borderColor: Colors.transparent,
                               borderRadius: 30,
                               buttonSize: 60,
-                              fillColor: FlutterFlowTheme.of(context).secondaryColor,
+                              fillColor:
+                                  FlutterFlowTheme.of(context).secondaryColor,
                               icon: Icon(
                                 Icons.directions_car,
-                                color: FlutterFlowTheme.of(context).customColor1,
+                                color:
+                                    FlutterFlowTheme.of(context).customColor1,
                                 size: 30,
                               ),
-                              onPressed: () =>Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context)=>ParkingsInformation()),),
-
+                              onPressed: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        ParkingsInformation()),
+                              ),
                             ),
                             SizedBox(height: 10),
                             Text(
                               'Voiture ',
-                              style: FlutterFlowTheme.of(context).bodyText2
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText2
                                   .override(
-                                fontFamily: 'Lexend Deca',
-                                color: FlutterFlowTheme.of(context).gray600,
-                              ),),
-
-                          ],),
+                                    fontFamily: 'Lexend Deca',
+                                    color: FlutterFlowTheme.of(context).gray600,
+                                  ),
+                            ),
+                          ],
+                        ),
                         Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -315,10 +315,12 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               borderColor: Colors.transparent,
                               borderRadius: 30,
                               buttonSize: 60,
-                              fillColor: FlutterFlowTheme.of(context).secondaryColor,
+                              fillColor:
+                                  FlutterFlowTheme.of(context).secondaryColor,
                               icon: Icon(
                                 Icons.motorcycle_sharp,
-                                color: FlutterFlowTheme.of(context).customColor1,
+                                color:
+                                    FlutterFlowTheme.of(context).customColor1,
                                 size: 30,
                               ),
                               onPressed: () {
@@ -328,13 +330,15 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             SizedBox(height: 10),
                             Text(
                               'Moto',
-                              style: FlutterFlowTheme.of(context).bodyText2
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText2
                                   .override(
-                                fontFamily: 'Lexend Deca',
-                                color: FlutterFlowTheme.of(context).gray600,
-                              ),),
-
-                          ],),
+                                    fontFamily: 'Lexend Deca',
+                                    color: FlutterFlowTheme.of(context).gray600,
+                                  ),
+                            ),
+                          ],
+                        ),
                         Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -343,10 +347,12 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               borderColor: Colors.transparent,
                               borderRadius: 30,
                               buttonSize: 60,
-                              fillColor: FlutterFlowTheme.of(context).secondaryColor,
+                              fillColor:
+                                  FlutterFlowTheme.of(context).secondaryColor,
                               icon: Icon(
                                 Icons.directions_bus,
-                                color: FlutterFlowTheme.of(context).customColor1,
+                                color:
+                                    FlutterFlowTheme.of(context).customColor1,
                                 size: 30,
                               ),
                               onPressed: () {
@@ -356,18 +362,20 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             SizedBox(height: 10),
                             Text(
                               'Poids lourd',
-                              style: FlutterFlowTheme.of(context).bodyText2
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText2
                                   .override(
-                                fontFamily: 'Lexend Deca',
-                                color: FlutterFlowTheme.of(context).gray600,
-                              ),),
-
-                          ],),
-
+                                    fontFamily: 'Lexend Deca',
+                                    color: FlutterFlowTheme.of(context).gray600,
+                                  ),
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ],
-                ),),/////
+                ),
+              ), /////
             ],
           ).animated([animationsMap['columnOnPageLoadAnimation']]),
         );
