@@ -297,6 +297,7 @@ class _CreateUserWidgetState extends State<CreateUserWidget> {
                           fontSize: 14,
                           fontWeight: FontWeight.normal,
                         ),
+                    keyboardType: TextInputType.number,
                   ),
                 ),
                 Padding(
@@ -350,6 +351,7 @@ class _CreateUserWidgetState extends State<CreateUserWidget> {
                           fontSize: 14,
                           fontWeight: FontWeight.normal,
                         ),
+                    keyboardType: TextInputType.number,
                   ),
                 ),
                 Align(
