@@ -57,15 +57,15 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Container(
-              width: 250,
+              width: 300,
               height: 250,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).customColor1,
               ),
               child: Image.asset(
                 'assets/images/forgot_password.png',
-                width: 100,
-                height: 100,
+                width: 250,
+                height: 250,
                 fit: BoxFit.contain,
               ),
             ),

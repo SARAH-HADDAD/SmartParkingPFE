@@ -13,10 +13,17 @@ class ParkingsInformation extends StatefulWidget {
 }
 
 class _ParkingsInformationState extends State<ParkingsInformation> {
+  //The code below is the leading powerhouse — It performs the read function from our Cloud Firestore.
+
+  //It gets an instance of our parkings collection and stores it in our Stream<QuerySnapshot> variable.
+
   final Stream<QuerySnapshot> _parkingsStream = FirebaseFirestore.instance
       .collection('parking')
-      .orderBy("prix", descending: true)
+      .orderBy("rating", descending: true)
       .snapshots();
+
+/* The code below is a Flutter widget — this creates a stream which updates the widget state whenever
+ there is a change to the data snapshot on the database. It displays a list of all the parkings */
 
   @override
   Widget build(BuildContext context) {

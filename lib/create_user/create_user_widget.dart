@@ -19,7 +19,8 @@ class CreateUserWidget extends StatefulWidget {
 }
 
 class _CreateUserWidgetState extends State<CreateUserWidget> {
-  String uploadedFileUrl = '';
+  String uploadedFileUrl =
+      'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png';
   TextEditingController textController1;
   TextEditingController numtelController;
   TextEditingController permisIDController;
@@ -360,8 +361,8 @@ class _CreateUserWidgetState extends State<CreateUserWidget> {
                         final usersUpdateData = createUsersRecordData(
                           displayName: textController1.text,
                           photoUrl: uploadedFileUrl,
-                          phoneNumber: '',
-                          permisID: '',
+                          phoneNumber: numtelController.text,
+                          permisID: permisIDController.text,
                         );
                         await createUserUsersRecord.reference
                             .update(usersUpdateData);

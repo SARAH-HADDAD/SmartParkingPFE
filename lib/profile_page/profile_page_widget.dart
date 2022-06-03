@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../change_password/change_password_widget.dart';
@@ -425,12 +427,14 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 40),
                   child: FFButtonWidget(
                     onPressed: () async {
+                      FirebaseAuth.instance.signOut();
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => MainWidget(),
                         ),
                       );
+                      
                     },
                     text: 'Se déconnecter',
                     options: FFButtonOptions(

@@ -1,19 +1,7 @@
-import '../auth/auth_util.dart';
 import '../backend/backend.dart';
-import 'package:latlong2/latlong.dart' as LatLng;
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:http/http.dart' as http;
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import '../change_password/change_password_widget.dart';
-import '../edit_profile/edit_profile_widget.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../map.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'ChoisirUnParking.dart';
 
 class ChoisirParkingPage extends StatefulWidget {
@@ -23,7 +11,30 @@ class ChoisirParkingPage extends StatefulWidget {
 }
 
 class _ChoisirParkingPageState extends State<ChoisirParkingPage> {
+  //To perform a write operation, we will first create a collection instance and a variable to hold our parking text input
+  // CollectionReference parkings =
+  //     FirebaseFirestore.instance.collection('parkings');
+  // int distance = 0;
+  //   final Stream<QuerySnapshot> _parkingsStream = FirebaseFirestore.instance
+  //     .collection('parking')
+  //     .orderBy("rating", descending: true)
+  //     .snapshots();
+  List<String> docIDs = [];
+  Future getDocId() async {
+    await FirebaseFirestore.instance.collection('parking').get().then(
+          (snapshot) => snapshot.docs.forEach((document) {
+            print(document.reference);
+            docIDs.add(document.reference.id);
+          }),
+        );
+  }
+
   @override
+  void initState() {
+    getDocId();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
