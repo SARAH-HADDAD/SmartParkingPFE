@@ -58,7 +58,7 @@ class _InscrirePaiementWidgetState extends State<InscrirePaiementWidget> {
         elevation: 0,
       ),
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
           child: Column(
@@ -66,8 +66,8 @@ class _InscrirePaiementWidgetState extends State<InscrirePaiementWidget> {
             children: [
               Image.asset(
                 'assets/images/Expiry.png',
-                width: 250,
-                height: 250,
+                width: 150,
+                height: 150,
                 fit: BoxFit.contain,
               ),
               Padding(

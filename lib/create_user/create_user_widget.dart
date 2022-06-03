@@ -79,7 +79,7 @@ class _CreateUserWidgetState extends State<CreateUserWidget> {
             elevation: 0,
           ),
           backgroundColor: Colors.white,
-          body: SafeArea(
+          body: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -396,7 +396,7 @@ class _CreateUserWidgetState extends State<CreateUserWidget> {
                 ),
               ],
             ),
-          ),
+          ), //body
         );
       },
     );

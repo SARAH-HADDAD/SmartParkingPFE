@@ -8,6 +8,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../choisirUnParking/ChoisirUnParking.dart';
+import '../choisirUnParking/ChoisirParkingPage.dart';
 import '../map.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -87,7 +88,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                   boxShadow: [
                     BoxShadow(
                       blurRadius: 3,
-                      color: FlutterFlowTheme.of(context).alternate,
+                      color: FlutterFlowTheme.of(context).primaryColor,
                       offset: Offset(0, 1),
                     )
                   ],
@@ -99,7 +100,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                     topRight: Radius.circular(0),
                   ),
                   border: Border.all(
-                    color: FlutterFlowTheme.of(context).customColor1,
+                    color: FlutterFlowTheme.of(context).secondaryColor,
                   ),
 
                   //gradient : LinearGradient(colors : []), FlutterFlowTheme.of(context).tertiaryColor
@@ -291,8 +292,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               onPressed: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) =>
-                                        ParkingsInformation()),
+                                    builder: (context) => ChoisirParkingPage()),
                               ),
                             ),
                             SizedBox(height: 10),
